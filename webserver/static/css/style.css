@@ -1,0 +1,27 @@
+/* line 10, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+form {
+  background: lightblue;
+  width: 40%;
+  margin: auto;
+  padding: 1.4em;
+  border-radius: 8px;
+  top: 31.5%;
+  left: 30%;
+  position: absolute;
+}
+
+/* line 21, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+#videocontainer {
+  width: 60%;
+  float: left;
+}
+
+/* line 25, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+#chatcontainer {
+  width: 40%;
+  background-size: 100%;
+  background: black;
+  float: left;
+}
+
+/*# sourceMappingURL=style.css.map */

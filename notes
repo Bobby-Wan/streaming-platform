@@ -1,0 +1,59 @@
+TASKS:
+create page where stream is shown for selected user
+add categories table to database
+create browse page with categories
+
+think about s.s. and http communication, can we verify each stream consumption request
+from http somehow?
+
+ask s.s. for streaming key
+ask s.s. if stream is active somehow
+
+alter implementation of livego to only let my http server get keys :)
+may also make livego validate user 
+
+
+
+
+
+Streaming server:
+Fetching with RTMP:
+build own or use existing? - building my own is madness, its a 52 page spec
+
+only authenticated users can stream to server
+so tokens are valid here
+
+
+Serving:
+WebM?
+hit an Auth endpoint before http and streaming server?
+OR proxy some urls from http server to streaming server
+
+twitch generates a new guid for the blob url in the video element
+every time i reload page
+
+keep a database table of active streamers, each 
+
+WebRTC:
+more peer to peer
+not intended for broadcasting
+does it work for VOD?
+
+HLS (LL-HLS):
+seems like the solution to use
+this is what twitch tv uses right now
+how easy will it be to implement in browser
+how will http server understand the a stream has started
+    can the streaming server send info to the http server?
+    or the http server will send a request every time a client requests a stream page
+
+    OR the streamer will signal he will start streaming through http,
+    then the browser will show what it is receiving from the streaming server,
+    so the streamer can know when if the stream is working.
+
+    Also, the streamer can get the key from the browser, cooler this way.
+    
+
+
+//////////////////////////////////
+verify email when signing up

@@ -1,0 +1,30 @@
+$primary-color: lightblue;
+$fw: 40%;
+$fh:37%;
+$ft:(100%-fh)/2;
+$fl:(100%-fw)/2;
+
+$videoContainerWidth:60%;
+$chatContainerWidth:(100%-$videoContainerWidth);
+
+form{
+    background:$primary-color;
+    width:$fw;
+    margin:auto;
+    padding:1.4em;
+    border-radius: 8px;
+    top:(100%-$fh)/2;
+    left:(100%-$fw)/2;
+    position:absolute;
+}
+
+#videocontainer{
+    width:$videoContainerWidth;
+    float:left;
+}
+#chatcontainer{
+    width:$chatContainerWidth;
+    background-size: 100%;
+    background:black;
+    float:left;
+}
