@@ -16,10 +16,14 @@
             <a class="dropdown-item" href="#">Social</a>
             <a class="dropdown-item" href="#">Music</a>
           </div>
+
         </li>
-        {{if not .IsLoggedIn}}
+        {{if .isLoggedIn}}
         <li class="nav-item active">
           <a class="nav-link" href="/profile">Profile <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/live">Go Live <span class="sr-only">(current)</span></a>
         </li>
         {{else}}
         <li class="nav-item active">

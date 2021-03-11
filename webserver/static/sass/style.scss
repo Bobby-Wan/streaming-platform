@@ -28,3 +28,15 @@ form{
     background:black;
     float:left;
 }
+
+#stream-key, #server-address{
+    border:2px black solid;
+    background:white;
+    padding:5px;
+}
+.invisible{
+    display: none;
+}
+.visible-block{
+    display:'block';
+}

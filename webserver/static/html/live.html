@@ -1,0 +1,54 @@
+{{define "live"}}
+{{template "head" .}}
+{{template "navbar" .}}
+
+{{if .}}
+{{if .isStreaming}}
+
+{{else}}
+
+
+
+<form id='stream-form' >
+    <div class="visible-block" id="category-picker">
+        <div class="mb-3">
+        <select name="categories" id="categories" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option value="0" selected>Choose a category</option>
+            {{if .categories}}
+            {{range $index, $category := .categories}}
+            <option value="{{$index}}">{{$category}}</option>
+            {{end}}
+            {{end}}
+        </select>
+        </div>
+        <br>
+        <button id='configure-button' type="submit" class="btn btn-primary">Configure Stream</button>
+    </div>
+
+    <div class="invisible" id='configuration'>
+        <div class="mb-3">
+            <label for="server-address" class="form-label"><b>Server Address</b></label>
+            <input readonly type="text" class="form-control-plaintext" id="server-address" value="">
+        </div>
+        <div class="mb-3">
+            <label for="stream-key" class="form-label"><b>Stream Key</b></label>
+            <input readonly type="text" class="form-control-plaintext" id="stream-key" value="">
+        </div>
+    </div>
+</form>
+<script src='/static/js/scripts.js'></script>
+<script>     
+    let configButton = document.getElementById('configure-button');
+    if(!configButton){
+        debugger;
+        console.error('Could not find config button');
+    }
+
+    configButton.addEventListener("click", showStreamConfig, false);
+</script>
+{{end}}
+{{end}}
+
+
+{{template "footer" .}}
+{{end}}

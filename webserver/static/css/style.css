@@ -24,4 +24,21 @@ form {
   float: left;
 }
 
+/* line 32, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+#stream-key, #server-address {
+  border: 2px black solid;
+  background: white;
+  padding: 5px;
+}
+
+/* line 37, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+.invisible {
+  display: none;
+}
+
+/* line 40, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+.visible-block {
+  display: 'block';
+}
+
 /*# sourceMappingURL=style.css.map */
