@@ -1,0 +1,24 @@
+syntax="proto3";
+
+option go_package="github.com/bobby-wan/streaming-platform/grpc-signaller";
+
+message StreamStateChangeSignal{
+    uint32 id=1;
+    uint32 userid=2;
+    enum State{
+        NOTCONNECTED=0;
+        UNRESPONSIVE=1;
+        CONNECTED=2;
+        RUNNING=3;
+    }
+    State oldstate=3;
+    State newstate=4;
+}
+
+message SignalResponse{
+    bool ok=1;
+}
+
+service SignalService{
+    rpc SignalStreamStateChange(StreamStateChangeSignal) returns (SignalResponse);
+}
