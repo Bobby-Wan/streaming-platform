@@ -1,7 +1,20 @@
 async function showStreamConfig(e){
     e.preventDefault();
 
-    $.get(`/configure`,null, function(data){
+    let sel = document.getElementById('categories');
+    if(sel.selectedIndex === 0){
+        sel.style.background='#ff5f6e';
+        return;
+    }
+    let title=getElementValue("title");
+    if(title.value === ""){
+        title.style.background='#ff5f6e';
+        return;
+    }
+    let category=getSelectedCategory();
+    $.get(`/configure?category=${category}&title=${title}`,
+    null, 
+    function(data){
         if(data && data.hasOwnProperty('server-address') && data.hasOwnProperty('stream-key')){
           showConfigurationDiv(data['server-address'],data['stream-key']);
         }
@@ -32,3 +45,28 @@ function showConfigurationDiv(address, key){
     customDiv.classList.remove('visible-block');
     customDiv.classList.add('invisible');
 };
+
+function getElementValue(id){
+    return document.getElementById(id).value;
+}
+
+function getSelectedCategory(){
+    let e = document.getElementById('categories');
+    return e.options[e.selectedIndex].text;
+}
+
+function showMessage(message, isAlert){
+    span = document.createElement("span");
+    span.innerHTML = message;
+    span.style.padding = "1.3px";
+    if(isAlert){
+        span.style.background = 'salmon';
+    }
+    else{
+        span.style.background = 'greenyellow';
+    }
+    document.getElementsByTagName('body')[0].childNodes.addAt(0, span);
+    setTimeout(()=>{
+        span.remove();
+      }, 3000);
+}

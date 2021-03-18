@@ -2,13 +2,16 @@
 {{template "head" .}}
 
 <body>
-    <form id='signup-form'>
+    <form action="/signup" method="POST" id='signup-form'>
         <div class="form-group">
           <label for="signup-email">Email address</label>
           <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp2" class="form-text text-muted">Will be used to log in.</small>        
+          <small id="emailHelp" class="form-text text-muted">Will be used to log in.</small>        
         </div>
-        
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter username"> 
+        </div>
         <div class="form-group">
           <label for="signup-password">Password</label>
           <input type="password" class="form-control" id="signup-password" placeholder="Password">

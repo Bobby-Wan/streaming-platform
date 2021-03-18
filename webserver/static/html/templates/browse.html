@@ -1,0 +1,25 @@
+{{define "browse"}}
+
+{{template "head" .}}
+{{template "navbar" .}}
+
+{{if .}}
+{{if .streams}}
+{{range .streams}}
+<div class="card" style="width: 18rem;">
+  <a href="http://localhost:8080/live/{{.Username}}">
+    <img src="/static/images/{{.Category}}.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-text">{{.Username}}</p>
+      <h3 class="card-text">{{.Title}}</h3>
+    </div>
+  </a>
+</div>
+
+{{template "footer" .}}
+{{end}}
+
+
+{{end}}
+{{end}}
+{{end}}

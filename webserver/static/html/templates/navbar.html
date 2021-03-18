@@ -3,31 +3,33 @@
     <a class="navbar-brand" href="/">Witch.tv</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Browse</a>
-        </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categories
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Gaming</a>
-            <a class="dropdown-item" href="#">Social</a>
-            <a class="dropdown-item" href="#">Music</a>
+            {{range .categories}}
+            <a class="dropdown-item" href="/browse?category={{.}}">{{.}}</a>
+            {{end}}
           </div>
 
         </li>
         {{if .isLoggedIn}}
-        <li class="nav-item active">
-          <a class="nav-link" href="/profile">Profile <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/live">Go Live <span class="sr-only">(current)</span></a>
-        </li>
+          {{if .isStreaming}}
+          <li class="nav-item active">
+            <a class="nav-link" href="/live/{{.username}}">Live<span class="sr-only">(current)</span></a>
+          </li>
+          {{else}}
+          <li class="nav-item active">
+            <a class="nav-link" href="/live">Go Live <span class="sr-only">(current)</span></a>
+          </li>
+          {{end}}
         {{else}}
         <li class="nav-item active">
           <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/signup">Signin <span class="sr-only">(current)</span></a>
         </li>
         {{end}}
     </div>

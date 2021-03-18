@@ -4,7 +4,7 @@ $fh:37%;
 $ft:(100%-fh)/2;
 $fl:(100%-fw)/2;
 
-$videoContainerWidth:60%;
+$videoContainerWidth:50%;
 $chatContainerWidth:(100%-$videoContainerWidth);
 
 form{
@@ -18,10 +18,37 @@ form{
     position:absolute;
 }
 
-#videocontainer{
-    width:$videoContainerWidth;
+#signup-form{
+    top:10%;
+}
+
+#videocontainer, #empty-container{
+    display:block;
+    margin: auto;
+    text-align: center;
+}
+
+#red-dot{
+    display:inline;
     float:left;
 }
+
+#live-link{
+    display:inline;
+}
+
+.nav-item{
+    display:inline;
+}
+
+#video{
+    width:$videoContainerWidth;
+}
+
+#no-stream-image{
+    width:$videoContainerWidth;
+}
+
 #chatcontainer{
     width:$chatContainerWidth;
     background-size: 100%;

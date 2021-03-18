@@ -1,22 +1,39 @@
 {{define "user"}}
 {{template "head" .}}
 {{template "navbar" .}}
-<div id="videocontainer"><video id="video" autoplay></video></div>
-<div id="chatcontainer"></div>
+
 
 {{if .}}
+{{if .isStreaming}}
+<div id="videocontainer">
+  <video id="video" autoplay></video>
+  <h1>{{.stream.Title}}</h1>
+</div>
+<div id="chatcontainer"></div>
+{{if .room}}
+
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script>
     if(Hls.isSupported()) {
       var video = document.getElementById('video');
       var hls = new Hls();
-      hls.loadSource('http://127.0.0.1:7002/live/{{.Room}}.m3u8');
+      hls.loadSource('http://127.0.0.1:7002/live/{{.room}}.m3u8');
       hls.attachMedia(video);
       hls.on(Hls.Events.MANIFEST_PARSED,function() {
         video.play();
     });
    }
   </script>
+{{end}}
+{{else}}
+<div id="empty-container">
+  <img id="no-stream-image" src="/static/images/novideo.png" alt="">
+  <h1>User is not currently streaming</h1>
+</div>
+
+
+{{end}}
+
 {{end}}
 {{template "footer" .}}
 {{end}}

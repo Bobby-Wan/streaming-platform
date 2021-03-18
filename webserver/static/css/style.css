@@ -1,4 +1,4 @@
-/* line 10, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+/* line 10, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
 form {
   background: lightblue;
   width: 40%;
@@ -10,33 +10,60 @@ form {
   position: absolute;
 }
 
-/* line 21, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
-#videocontainer {
-  width: 60%;
+/* line 21, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+#videocontainer, #empty-container {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+/* line 27, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+#red-dot {
+  display: inline;
   float: left;
 }
 
-/* line 25, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+/* line 32, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+#live-link {
+  display: inline;
+}
+
+/* line 36, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+.nav-item {
+  display: inline;
+}
+
+/* line 40, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+#video {
+  width: 50%;
+}
+
+/* line 44, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+#no-stream-image {
+  width: 50%;
+}
+
+/* line 48, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
 #chatcontainer {
-  width: 40%;
+  width: 50%;
   background-size: 100%;
   background: black;
   float: left;
 }
 
-/* line 32, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+/* line 55, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
 #stream-key, #server-address {
   border: 2px black solid;
   background: white;
   padding: 5px;
 }
 
-/* line 37, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+/* line 60, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
 .invisible {
   display: none;
 }
 
-/* line 40, ../../Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
+/* line 63, D:/Projects/GoLang Course 2021/project/webserver/static/sass/style.scss */
 .visible-block {
   display: 'block';
 }
