@@ -4,7 +4,7 @@
 // 	protoc        v3.15.6
 // source: signaller.proto
 
-package grpc_signaller
+package signaller
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
