@@ -8,6 +8,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/securecookie v1.1.1
 	github.com/gorilla/sessions v1.2.1
+	github.com/spf13/viper v1.7.1
 	golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83
 	google.golang.org/grpc v1.36.0
 	google.golang.org/protobuf v1.26.0
